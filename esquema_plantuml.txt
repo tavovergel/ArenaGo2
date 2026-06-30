@@ -1,0 +1,22 @@
+@startuml
+
+entity "users" {
+  * id : bigint
+  --
+  name : varchar
+  email : varchar
+}
+
+entity "escenarios" {
+  * id_escenario : bigint
+  --
+  nombre_escenario : varchar
+  descripcion : text
+  municipio : varchar
+  banos : enum(Si,No)
+  user_id : bigint
+}
+
+users ||--o{ escenarios : "crea"
+
+@enduml
